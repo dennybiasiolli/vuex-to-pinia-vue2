@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter.vue should respect the snapshot 1`] = `
+<div>
+  <div>
+    
+    count is: 0
+  
+  </div>
+   
+  <div>
+    <span>
+       is even
+    </span>
+  </div>
+   
+  <button>
+    increment sync
+  </button>
+  
+   
+  
+  <button>
+    increment async
+  </button>
+</div>
+`;
