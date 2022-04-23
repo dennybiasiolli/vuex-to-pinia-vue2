@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import About from '@/components/About.vue'
 import Counter from '@/components/Counter.vue'
+import TodoList from '@/components/TodoList.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,10 @@ const routes = [
   {
     path: '/counter',
     component: Counter,
+  },
+  {
+    path: '/todo-list',
+    component: TodoList,
   },
 ]
 

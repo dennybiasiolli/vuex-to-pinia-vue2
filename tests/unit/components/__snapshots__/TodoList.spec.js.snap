@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList.vue should respect the snapshot 1`] = `
+<div>
+  <div>
+    <input
+      type="checkbox"
+    />
+     
+    <span>
+      test
+    </span>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+    />
+     
+    <span>
+      test2
+    </span>
+  </div>
+</div>
+`;
