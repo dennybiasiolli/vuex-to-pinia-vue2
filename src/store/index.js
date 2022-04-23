@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import todo from './modules/todo'
 
 Vue.use(Vuex)
 
@@ -25,9 +26,14 @@ export const actions = {
   },
 }
 
+export const modules = {
+  todo,
+}
+
 export default new Vuex.Store({
   state: { ...defaultState },
   getters,
   mutations,
   actions,
-});
+  modules,
+})

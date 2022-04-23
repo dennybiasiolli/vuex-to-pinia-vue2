@@ -1,4 +1,5 @@
-import store, { defaultState, getters, mutations, actions } from '@/store'
+import store, { defaultState, getters, mutations, actions, modules } from '@/store'
+import todoModule from '@/store/modules/todo'
 
 describe('store', () => {
   describe('state', () => {
@@ -29,19 +30,26 @@ describe('store', () => {
 
   describe('actions', () => {
     test('incrementAsync should work as expected', () => {
-      jest.useFakeTimers();
+      jest.useFakeTimers()
       const context = { commit: jest.fn() }
       actions.incrementAsync(context)
       expect(context.commit).not.toHaveBeenCalled()
-      jest.advanceTimersByTime(1000);
+      jest.advanceTimersByTime(1000)
       expect(context.commit).toHaveBeenCalledTimes(1)
       expect(context.commit).toHaveBeenCalledWith('increment')
-      jest.useRealTimers();
+      jest.useRealTimers()
+    })
+  })
+
+  describe('modules', () => {
+    test('should have expected modules', () => {
+      expect(Object.keys(modules)).toEqual(['todo'])
+      expect(modules.todo).toBe(todoModule)
     })
   })
 
   test('real store', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers()
     expect(store.state.count).toBe(0)
     expect(store.getters.isEven).toBe(true)
     store.commit('increment')
@@ -52,8 +60,8 @@ describe('store', () => {
     expect(store.getters.isEven).toBe(true)
     store.dispatch('incrementAsync')
     expect(store.state.count).toBe(2)
-    jest.advanceTimersByTime(1000);
+    jest.advanceTimersByTime(1000)
     expect(store.state.count).toBe(3)
-    jest.useRealTimers();
+    jest.useRealTimers()
   })
 })
