@@ -5,6 +5,9 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
     '^.+\\.vue$': '@vue/vue2-jest',
   },
+  // transformIgnorePatterns: [
+  //   'node_modules/(vue-demi)',
+  // ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
