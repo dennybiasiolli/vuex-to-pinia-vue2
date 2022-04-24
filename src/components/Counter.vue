@@ -15,16 +15,15 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useStore } from '@/stores/main'
 
 export default {
   computed: {
-    ...mapState(['count']),
-    ...mapGetters(['isEven', 'isOdd']),
+    ...mapState(useStore, ['count', 'isEven', 'isOdd']),
   },
   methods: {
-    ...mapMutations(['increment']),
-    ...mapActions(['incrementAsync']),
+    ...mapActions(useStore, ['increment', 'incrementAsync']),
   },
 }
 </script>
