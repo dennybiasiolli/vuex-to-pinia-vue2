@@ -4,8 +4,9 @@
       count is: {{ count }}
     </div>
     <div>
-      <span v-if="isEven">&nbsp;is even</span>
-      <span v-else>&nbsp;is odd</span>
+      isEven is: {{ isEven }}
+      |
+      isOdd is: {{ isOdd }}
     </div>
     <button @click="increment">increment sync</button>
     &nbsp;
@@ -19,7 +20,7 @@ import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapState(['count']),
-    ...mapGetters(['isEven']),
+    ...mapGetters(['isEven', 'isOdd']),
   },
   methods: {
     ...mapMutations(['increment']),

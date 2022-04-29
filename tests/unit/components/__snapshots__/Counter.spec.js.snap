@@ -9,9 +9,11 @@ exports[`Counter.vue should respect the snapshot 1`] = `
   </div>
    
   <div>
-    <span>
-       is even
-    </span>
+    
+    isEven is: true
+    |
+    isOdd is: false
+  
   </div>
    
   <button>
