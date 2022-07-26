@@ -8,20 +8,18 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-import { GET_TODO_LIST } from '@/store/modules/todo-types'
-
-const { mapState, mapActions } = createNamespacedHelpers('todo')
+import { mapState, mapActions } from 'pinia'
+import { useTodoStore } from '@/stores/todo'
 
 export default {
   computed: {
-    ...mapState(['todoList', 'todoListLoading', 'todoListLoadingError']),
+    ...mapState(useTodoStore, ['todoList', 'todoListLoading', 'todoListLoadingError']),
   },
   mounted() {
-    this[GET_TODO_LIST]()
+    this.getTodoList()
   },
   methods: {
-    ...mapActions([GET_TODO_LIST]),
+    ...mapActions(useTodoStore, ['getTodoList']),
   },
 }
 </script>
